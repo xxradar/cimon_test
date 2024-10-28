@@ -1,0 +1,18 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install dependencies
+        run: apt update && apt install -y curl wget jq
+
+      - name: Run Cimon
+        uses: cycodelabs/cimon-action@v0
+
+      - name: Run a network connection
+        run: |
+          curl google.com
