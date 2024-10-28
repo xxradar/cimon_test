@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Install dependencies
-        run: apt update && apt install -y curl wget jq
+        run: sudo apt update && sudo apt install -y curl wget jq
 
       - name: Run Cimon
         uses: cycodelabs/cimon-action@v0
